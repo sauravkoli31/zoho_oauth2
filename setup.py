@@ -7,9 +7,9 @@ setup(
   description = 'Implements OAuth2.0 flow to use ManageEngine Service Desk API.',   # Give a short description about your library
   author = 'Saurav Koli',                   # Type in your name
   author_email = 'sauravkoli3105@gmail.com',      # Type in your E-Mail
-  url = 'https://github.com/user/reponame',   # Provide either the link to your github or to your website
-  download_url = 'https://github.com/user/reponame/archive/v_01.tar.gz',    # I explain this later on
-  keywords = ['SOME', 'MEANINGFULL', 'KEYWORDS'],   # Keywords that define your package best
+  url = 'https://github.com/sauravkoli31/zoho_oauth2',   # Provide either the link to your github or to your website
+  download_url = 'https://github.com/sauravkoli31/zoho_oauth2/archive/refs/tags/1.0.tar.gz',    # I explain this later on
+  keywords = ['zoho', 'ZohoAPI', 'ZOHO API', 'Manage Engine'],   # Keywords that define your package best
   install_requires=[            # I get to this in a second
           'requests',
           'json',
