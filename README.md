@@ -6,7 +6,7 @@ Uses OAuth 2.0 for generating access_tokens for using Zoho APIs.
 ## Generate required credentials
 
 - **CLIENT_ID | CLIENT_SECRET** - Generate the two values from [https://api-console.zoho.com/](https://api-console.zoho.com/).
-Add a self client, and copy the CLIENT_ID and CLIENT_SECRET into your .env file.
+Add a self client, and copy the CLIENT_ID and CLIENT_SECRET as seen in the example below.
 
 ## API Documentation
 
