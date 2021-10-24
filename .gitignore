@@ -1,3 +1,5 @@
 .vscode
 *.json
 *.token
+/dist
+dist
