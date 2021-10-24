@@ -1,16 +1,23 @@
 from distutils.core import setup
+import pathlib
+
+here = pathlib.Path(__file__).parent.resolve()
+
+# Get the long description from the README file
+long_description = (here / 'README.md').read_text(encoding='utf-8')
+
 setup(
   name = 'zoho_oauth2',         # How you named your package folder (MyLib)
   packages = ['zoho_oauth2'],   # Chose the same as "name"
-  version = '1.0.3',      # Start with a small number and increase it with every change you make
+  version = '1.0.4',      # Start with a small number and increase it with every change you make
   license='MIT',        # Chose a license from here: https://help.github.com/articles/licensing-a-repository
   description = 'Implements OAuth2.0 flow to use ManageEngine Service Desk API.',   # Give a short description about your library
-  long_description=README,
+  long_description=long_description,
   long_description_content_type='text/markdown',
   author = 'Saurav Koli',                   # Type in your name
   author_email = 'sauravkoli3105@gmail.com',      # Type in your E-Mail
   url = 'https://github.com/sauravkoli31/zoho_oauth2',   # Provide either the link to your github or to your website
-  download_url = 'https://github.com/sauravkoli31/zoho_oauth2/archive/refs/tags/1.0.3.tar.gz',    # I explain this later on
+  download_url = 'https://github.com/sauravkoli31/zoho_oauth2/archive/refs/tags/1.0.4.tar.gz',    # I explain this later on
   keywords = ['zoho', 'ZohoAPI', 'ZOHO API', 'Manage Engine'],   # Keywords that define your package best
   install_requires=[            # I get to this in a second
           'requests'
