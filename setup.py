@@ -1,7 +1,7 @@
 from distutils.core import setup
 setup(
-  name = 'Zoho_OAuth2',         # How you named your package folder (MyLib)
-  packages = ['Zoho_OAuth2'],   # Chose the same as "name"
+  name = 'zoho_oauth2',         # How you named your package folder (MyLib)
+  packages = ['zoho_oauth2'],   # Chose the same as "name"
   version = '1.2',      # Start with a small number and increase it with every change you make
   license='MIT',        # Chose a license from here: https://help.github.com/articles/licensing-a-repository
   description = 'Implements OAuth2.0 flow to use ManageEngine Service Desk API.',   # Give a short description about your library
