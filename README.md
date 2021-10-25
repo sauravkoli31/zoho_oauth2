@@ -35,6 +35,23 @@ Learn more about the APIs from the link below.
 
 - [ManageEngine ServiceDesk Plus Cloud API Documentation](https://www.manageengine.com/products/service-desk/sdpod-v3-api/index.html)
 
+## Available methods to use.
+
+- To generate the access token for making the API Requests.
+```Python
+    ZohoAPITokens(
+        client_id=CLIENT_ID, #Required
+        client_secret=CLIENT_SECRET, #Required
+        redirect_uri=REDIRECT_URI, #Required
+        scope=SCOPES(as string, each scope separated by comma), #Required
+        region=REGION #Optional
+    )
+```
+
+- To revoke the refresh token. The method will revoke the access token and proceed with deleting the token.pickle file.
+```Python
+    revokeRefreshToken()
+```
 
 ## Example Usage
 
@@ -48,4 +65,3 @@ Learn more about the APIs from the link below.
             redirect_uri=REDIRECT_URI,
             scope=SCOPES(as string, each scope separated by comma)
         )
-        print(test.auth_token())

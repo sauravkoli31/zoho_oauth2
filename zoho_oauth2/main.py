@@ -122,3 +122,16 @@ class ZohoAPITokens:
             if not validity > time.time():
                 self.refreshToken()
         return self.token.get('access_token')
+
+    def revokeRefreshToken(self):
+        if os.path.isfile(self.tokenPickleFile):
+            self.readPickle()
+            response = requests.request("POST", f'{self.url}/revoke?token={self.token.get("refresh_token")}')
+            revoked = json.loads(response.text)
+            if revoked.get('status') == 'success':
+                self.token = None
+                os.remove(self.tokenPickleFile)
+                print('Refresh token has been revoked. token.pickle file is deleted.')
+            else:
+                raise Exception('Unable to revoke refresh token. Please try again after sometime.')
+            return 'Done'
