@@ -13,11 +13,16 @@ __version__ = '1.0'
 class ZohoAPITokens:
 
     def __init__(self, **kwargs):
-        self.url = 'https://accounts.zoho.com/oauth/v2/token?'
+        regionSpecificDomain = {'EU': 'https://accounts.zoho.eu',
+            'CN': 'https://accounts.zoho.com.cn',
+            'IN': 'https://accounts.zoho.in',
+            None: 'https://accounts.zoho.com'}
         self.client_id = kwargs.get('client_id')
         self.client_secret = kwargs.get('client_secret')
         self.redirect_uri = kwargs.get('redirect_uri')
         self.scope = kwargs.get('scope')
+        self.domain = kwargs.get('region')
+        self.url = f'{regionSpecificDomain.get("self.domain")}/oauth/v2/token'
         self.confirmation_code = None
         self.token = None
         self.tokenPickleFile = 'token.pickle'
