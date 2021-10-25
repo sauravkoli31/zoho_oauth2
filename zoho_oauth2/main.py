@@ -26,6 +26,13 @@ class ZohoAPITokens:
         self.confirmation_code = None
         self.token = None
         self.tokenPickleFile = 'token.pickle'
+        self.params = {
+            'client_id'    : self.client_id,
+            'client_secret': self.client_secret,
+            'redirect_uri' : self.redirect_uri,
+            'scope'        : self.scope
+        }
+
 
     def generate_access_and_refresh(self):
         '''
@@ -43,15 +50,12 @@ class ZohoAPITokens:
                 expires_in int:
                 valid_until epoch:
         '''
-        params = {
+        params = self.params.copy()
+        params.update({
             'code'         : self.confirmation_code,
             'grant_type'   : 'authorization_code',
-            'client_id'    : self.client_id,
-            'client_secret': self.client_secret,
-            'redirect_uri' : self.redirect_uri,
-            'scope'        : self.scope
-        }
-        response = requests.request("POST", self.url + urllib.parse.urlencode(params))
+        })
+        response = requests.request("POST", f'{self.url}?' + urllib.parse.urlencode(params))
         self.token = json.loads(response.text)
         if self.token.get('expires_in'):
             valid_until = time.time() + self.token.get('expires_in')
@@ -70,15 +74,12 @@ class ZohoAPITokens:
         Returns:
             new_token dict: dict with new access_token and validity.
         '''
-        params = {
+        params = self.params.copy()
+        params.update({
             'refresh_token': self.token.get('refresh_token'),
-            'grant_type'   : 'refresh_token',
-            'client_id'    : self.client_id,
-            'client_secret': self.client_secret,
-            'redirect_uri' : self.redirect_uri,
-            'scope'        : self.scope
-        }
-        response = requests.request("POST", self.url + urllib.parse.urlencode(params))
+            'grant_type'   : 'refresh_token'
+        })
+        response = requests.request("POST", f'{self.url}?' + urllib.parse.urlencode(params))
         refreshed_token = json.loads(response.text)
         access_token = refreshed_token.get('access_token')
 
