@@ -2,6 +2,11 @@
 
 Uses OAuth 2.0 for generating access_tokens for using Zoho APIs.
 
+## Installation
+
+Install the package using pip.
+
+    pip install zoho-oauth2
 
 ## Generate required credentials
 
