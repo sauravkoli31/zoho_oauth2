@@ -1,22 +1,33 @@
-# Manage Engine - Service Desk OAuth 2.0
+# Zoho API - OAuth 2.0
 
 Uses OAuth 2.0 for generating access_tokens for using Zoho APIs.
 
 
 ## Generate required credentials
 
-- **CLIENT_ID | CLIENT_SECRET** - Generate the two values from [https://api-console.zoho.com/](https://api-console.zoho.com/).
+- **CLIENT_ID**
+- **CLIENT_SECRET** 
+
+Generate the two values from [https://api-console.zoho.com/](https://api-console.zoho.com/).
 Add a self client, and copy the CLIENT_ID and CLIENT_SECRET as seen in the example below.
+
+- **redirect_uri** 
+
+Add the redirect uri of your instance.
+
+- **scope**
+
+You can find the list of scopes in the api documentation of the products you wish to use the API for.
 
 ## API Documentation
 
-The access tokens have only been tested with Manage Engine Service Desk although it should work with most Zoho products. 
+The access tokens have only been tested with Manage Engine Service Desk instance in a demo environment, although it should work with most Zoho products. 
 
 Learn more about the APIs from the link below.
 
-- [ManageEngine ServiceDesk Plus Cloud API Documentation](https://www.manageengine.com/products/service-desk/sdpod-v3-api/index.html)
+- [ZOHO People API Documentation](https://www.zoho.com/people/api/overview.html)
 
-- [ZOHO People API Documentation](https://www.manageengine.com/products/service-desk/sdpod-v3-api/SDPOD-V3-API.html#add-request)
+- [ManageEngine ServiceDesk Plus Cloud API Documentation](https://www.manageengine.com/products/service-desk/sdpod-v3-api/index.html)
 
 
 ## Example Usage
